@@ -1,0 +1,2 @@
+#include "MassPoint.h"
+
