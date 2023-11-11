@@ -3,7 +3,6 @@
 #include "Simulator.h"
 #include "MassPoint.h"
 #include "Spring.h"
-#include<list>
 
 
 // Do Not Change
@@ -53,8 +52,14 @@ private:
 	float m_fDamping;
 	int m_iIntegrator;
 
-	list<MassPoint*> m_massPoints;
-	list<Spring*> m_springs;
+	vector<MassPoint> m_massPoints;
+	vector<Spring> m_springs;
+
+	// Helper Functions
+	void explicitEuler(float timeStep);
+	void midpoint(float timeStep);
+	float length(Vec3 vector);
+	Vec3 normalize(Vec3 vector);
 
 	// UI Attributes
 	Vec3 m_externalForce;
